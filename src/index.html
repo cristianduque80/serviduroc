@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Serviduroc C.A. | Administración de Condominios en Venezuela</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-bluebrand-600 selection:text-white">
+
+    <header class="sticky top-0 z-50 bg-bluebrand-950/95 backdrop-blur-md border-b border-bluebrand-900 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2.5 sm:space-x-3">
+                    <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-tr from-bluebrand-600 to-bluebrand-400 flex items-center justify-center shadow-md font-extrabold text-white text-lg sm:text-xl tracking-wider shrink-0">
+                        SC
+                    </div>
+                    <div>
+                        <span class="text-lg sm:text-xl font-bold tracking-wide text-white">Serviduroc <span class="text-bluebrand-400">C.A.</span></span>
+                        <span class="block text-[10px] sm:text-xs text-bluebrand-200 tracking-wider">GESTIÓN DE CONDOMINIOS</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-slate-200 hover:text-bluebrand-400 font-medium transition duration-150">Inicio</a>
+                    <a href="#servicios" class="text-slate-200 hover:text-bluebrand-400 font-medium transition duration-150">Servicios</a>
+                    <a href="#nosotros" class="text-slate-200 hover:text-bluebrand-400 font-medium transition duration-150">Nosotros</a>
+                    <a href="#contacto" class="text-slate-200 hover:text-bluebrand-400 font-medium transition duration-150">Contacto</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#contacto" class="bg-gradient-to-r from-bluebrand-600 to-bluebrand-500 hover:from-bluebrand-700 hover:to-bluebrand-600 text-white font-semibold px-5 py-2.5 rounded-xl shadow-lg transition duration-200 flex items-center gap-2 border border-bluebrand-400/30">
+                        <i data-lucide="mail" class="w-4 h-4"></i> Contáctanos
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none p-2.5 rounded-xl bg-bluebrand-900 border border-bluebrand-800" aria-label="Abrir menú">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-bluebrand-950 border-b border-bluebrand-800 px-5 pt-4 pb-6 space-y-3 shadow-2xl transition-all duration-300">
+            <a href="#inicio" class="block py-2.5 text-base text-slate-200 hover:text-bluebrand-400 font-medium border-b border-bluebrand-900/50">Inicio</a>
+            <a href="#servicios" class="block py-2.5 text-base text-slate-200 hover:text-bluebrand-400 font-medium border-b border-bluebrand-900/50">Servicios</a>
+            <a href="#nosotros" class="block py-2.5 text-base text-slate-200 hover:text-bluebrand-400 font-medium border-b border-bluebrand-900/50">Nosotros</a>
+            <a href="#contacto" class="block py-2.5 text-base text-slate-200 hover:text-bluebrand-400 font-medium">Contacto</a>
+            <div class="pt-3">
+                <a href="#contacto" class="w-full text-center block bg-gradient-to-r from-bluebrand-600 to-bluebrand-500 text-white font-semibold py-3 rounded-xl shadow-lg">Solicitar Cotización</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="relative bg-gradient-to-b from-bluebrand-950 via-bluebrand-900 to-slate-900 text-white py-16 sm:py-24 lg:py-32 overflow-hidden">
+            <div class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:20px_20px] sm:[background-size:24px_24px]"></div>
+            <div class="absolute -top-40 -right-40 w-72 h-72 sm:w-96 sm:h-96 bg-bluebrand-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 bg-bluebrand-900/90 border border-bluebrand-500/40 text-bluebrand-200 px-3.5 py-2 rounded-full text-xs sm:text-sm font-medium shadow-inner max-w-full text-left">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-bluebrand-400 shrink-0"></i> 
+                            <span class="truncate">Administración Transparente y Profesional de Condominios</span>
+                        </div>
+                        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                            Tranquilidad total para tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-bluebrand-400 via-sky-300 to-blue-200">Condominio</span>
+                        </h1>
+                        <p class="text-base sm:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            Optimizamos la gestión residencial y comercial con estados de cuenta claros, cobranza oportuna y atención profesional dedicada a la valorización de su inmueble.
+                        </p>
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
+                            <a href="#contacto" class="w-full sm:w-auto bg-gradient-to-r from-bluebrand-600 to-bluebrand-500 hover:from-bluebrand-700 hover:to-bluebrand-600 text-white font-bold px-7 py-3.5 sm:py-4 rounded-xl shadow-xl transition-all duration-200 flex items-center justify-center gap-2 border border-bluebrand-400/30">
+                                <i data-lucide="file-text" class="w-5 h-5"></i> Solicitar Cotización
+                            </a>
+                            <a href="#servicios" class="w-full sm:w-auto bg-slate-800/80 hover:bg-slate-800 border border-slate-700 text-white font-semibold px-7 py-3.5 sm:py-4 rounded-xl shadow-lg transition-all duration-200 flex items-center justify-center gap-2">
+                                Conocer Servicios <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5">
+                        <div class="bg-gradient-to-br from-bluebrand-950 to-slate-900 p-6 sm:p-8 rounded-3xl border border-bluebrand-800 shadow-2xl relative">
+                            <div class="space-y-5 sm:space-y-6">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 bg-bluebrand-500/10 border border-bluebrand-500/30 rounded-2xl flex items-center justify-center text-bluebrand-400">
+                                    <i data-lucide="building-2" class="w-6 h-6 sm:w-7 sm:h-7"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl sm:text-2xl font-bold text-white">Gestión Integral Moderna</h3>
+                                    <p class="text-slate-300 text-xs sm:text-sm mt-2 leading-relaxed">
+                                        Nos encargamos de la contabilidad al día, cálculo de cuotas conforme a la normativa vigente, conciliación bancaria y supervisión constante de las áreas comunes.
+                                    </p>
+                                </div>
+                                <div class="space-y-2.5 sm:space-y-3">
+                                    <div class="flex items-center gap-3 text-xs sm:text-sm text-slate-300">
+                                        <i data-lucide="check-circle" class="w-4 h-4 sm:w-5 sm:h-5 text-bluebrand-400 shrink-0"></i>
+                                        <span>Emisión oportuna de recibos</span>
+                                    </div>
+                                    <div class="flex items-center gap-3 text-xs sm:text-sm text-slate-300">
+                                        <i data-lucide="check-circle" class="w-4 h-4 sm:w-5 sm:h-5 text-bluebrand-400 shrink-0"></i>
+                                        <span>Conciliación e informes mensuales</span>
+                                    </div>
+                                    <div class="flex items-center gap-3 text-xs sm:text-sm text-slate-300">
+                                        <i data-lucide="check-circle" class="w-4 h-4 sm:w-5 sm:h-5 text-bluebrand-400 shrink-0"></i>
+                                        <span>Asesoría legal y de asambleas</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicios" class="py-16 sm:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4 mb-12 sm:mb-16">
+                    <span class="text-bluebrand-600 font-semibold text-xs sm:text-sm uppercase tracking-widest bg-bluebrand-50 px-3 py-1 rounded-full border border-bluebrand-200">Nuestros Servicios</span>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold text-bluebrand-950">Soluciones integrales para la administración de condominios</h2>
+                    <p class="text-slate-600 text-base sm:text-lg">
+                        Cubrimos todas las necesidades operativas, financieras y legales de su comunidad con el respaldo de profesionales altamente calificados.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-8 hover:shadow-xl hover:border-bluebrand-500/50 transition-all duration-300 group flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 bg-bluebrand-950 text-bluebrand-400 rounded-2xl flex items-center justify-center mb-5 sm:mb-6 group-hover:bg-bluebrand-600 group-hover:text-white transition duration-300 shadow-md">
+                                <i data-lucide="calculator" class="w-6 h-6 sm:w-7 sm:h-7"></i>
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-bold text-bluebrand-950 mb-2.5 sm:mb-3">Administración Financiera</h3>
+                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                                Emisión transparente de recibos de condominio, cálculo de cuotas ordinarias y extraordinarias, control de ingresos, egresos y conciliación bancaria al día.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 2 -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-8 hover:shadow-xl hover:border-bluebrand-500/50 transition-all duration-300 group flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 bg-bluebrand-950 text-bluebrand-400 rounded-2xl flex items-center justify-center mb-5 sm:mb-6 group-hover:bg-bluebrand-600 group-hover:text-white transition duration-300 shadow-md">
+                                <i data-lucide="wallet" class="w-6 h-6 sm:w-7 sm:h-7"></i>
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-bold text-bluebrand-950 mb-2.5 sm:mb-3">Cobranza Efectiva</h3>
+                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                                Estrategias profesionales para optimizar la recaudación, gestión de recordatorios de pago y seguimiento constante a cuentas con morosidad.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-8 hover:shadow-xl hover:border-bluebrand-500/50 transition-all duration-300 group flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 bg-bluebrand-950 text-bluebrand-400 rounded-2xl flex items-center justify-center mb-5 sm:mb-6 group-hover:bg-bluebrand-600 group-hover:text-white transition duration-300 shadow-md">
+                                <i data-lucide="wrench" class="w-6 h-6 sm:w-7 sm:h-7"></i>
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-bold text-bluebrand-950 mb-2.5 sm:mb-3">Mantenimiento y Proveedores</h3>
+                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                                Coordinación y supervisión de proveedores calificados para el mantenimiento de ascensores, bombas hidroneumáticas y áreas comunes.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 4 -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-8 hover:shadow-xl hover:border-bluebrand-500/50 transition-all duration-300 group flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 bg-bluebrand-950 text-bluebrand-400 rounded-2xl flex items-center justify-center mb-5 sm:mb-6 group-hover:bg-bluebrand-600 group-hover:text-white transition duration-300 shadow-md">
+                                <i data-lucide="users" class="w-6 h-6 sm:w-7 sm:h-7"></i>
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-bold text-bluebrand-950 mb-2.5 sm:mb-3">Gestión de Asambleas</h3>
+                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                                Asesoría legal u organización integral de asambleas ordinarias y extraordinarias conforme a la Ley de Propiedad Horizontal.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 5 -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-8 hover:shadow-xl hover:border-bluebrand-500/50 transition-all duration-300 group flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 bg-bluebrand-950 text-bluebrand-400 rounded-2xl flex items-center justify-center mb-5 sm:mb-6 group-hover:bg-bluebrand-600 group-hover:text-white transition duration-300 shadow-md">
+                                <i data-lucide="file-check-2" class="w-6 h-6 sm:w-7 sm:h-7"></i>
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-bold text-bluebrand-950 mb-2.5 sm:mb-3">Reportes Financieros</h3>
+                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                                Entrega periódica de estados de cuenta detallados, soporte digital de comprobantes y total transparencia contable para la Junta de Condominio.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 6 -->
+                    <div class="bg-gradient-to-br from-bluebrand-900 to-bluebrand-950 text-white rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col justify-between relative overflow-hidden">
+                        <div>
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 bg-bluebrand-600 text-white rounded-2xl flex items-center justify-center mb-5 sm:mb-6 shadow-md border border-bluebrand-400/30">
+                                <i data-lucide="headset" class="w-6 h-6 sm:w-7 sm:h-7"></i>
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-bold text-white mb-2.5 sm:mb-3">Asesoría Legal y Atención</h3>
+                            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                                Soporte personalizado para juntas de condominio, mediación de conflictos vecinales y orientación jurídica profesional.
+                            </p>
+                        </div>
+                        <div class="pt-5 sm:pt-6 mt-5 sm:mt-6 border-t border-bluebrand-800">
+                            <a href="#contacto" class="text-bluebrand-400 hover:text-bluebrand-300 font-semibold text-xs sm:text-sm flex items-center gap-2">
+                                <span>Contáctanos hoy</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="nosotros" class="py-16 sm:py-24 bg-white border-t border-slate-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                    <div class="lg:col-span-6 space-y-5 sm:space-y-6">
+                        <span class="text-bluebrand-600 font-semibold text-xs sm:text-sm uppercase tracking-widest bg-bluebrand-50 px-3 py-1 rounded-full border border-bluebrand-200">¿Por qué elegirnos?</span>
+                        <h2 class="text-2xl sm:text-4xl font-extrabold text-bluebrand-950">Comprometidos con la excelencia y la armonía de su comunidad</h2>
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                            En <strong class="text-bluebrand-900">Serviduroc C.A.</strong> entendemos que administrar un condominio requiere resiliencia, rigor financiero y máxima transparencia. Nos caracterizamos por:
+                        </p>
+
+                        <div class="space-y-4 pt-2">
+                            <div class="flex items-start gap-3.5 sm:gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-bluebrand-50 text-bluebrand-600 font-bold flex items-center justify-center shrink-0 mt-0.5">
+                                    <i data-lucide="award" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-bluebrand-950 text-base sm:text-lg">Experiencia Comprobada</h3>
+                                    <p class="text-slate-600 text-xs sm:text-sm mt-1">Años gestionando edificios residenciales y comerciales con altos estándares de satisfacción.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3.5 sm:gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-bluebrand-50 text-bluebrand-600 font-bold flex items-center justify-center shrink-0 mt-0.5">
+                                    <i data-lucide="eye" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-bluebrand-950 text-base sm:text-lg">Transparencia Absoluta</h3>
+                                    <p class="text-slate-600 text-xs sm:text-sm mt-1">Estados financieros claros, facturas originales a la vista y reportes abiertos para la Junta de Condominio.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3.5 sm:gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-bluebrand-50 text-bluebrand-600 font-bold flex items-center justify-center shrink-0 mt-0.5">
+                                    <i data-lucide="heart-handshake" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-bluebrand-950 text-base sm:text-lg">Atención Personalizada</h3>
+                                    <p class="text-slate-600 text-xs sm:text-sm mt-1">Ejecutivos de cuenta asignados que responden oportunamente a las necesidades de los copropietarios.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-6">
+                        <div class="bg-gradient-to-tr from-bluebrand-950 via-bluebrand-900 to-slate-900 p-6 sm:p-10 rounded-3xl text-white shadow-2xl relative overflow-hidden">
+                            <h3 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white flex items-center gap-3">
+                                <i data-lucide="building" class="w-6 h-6 text-bluebrand-400 shrink-0"></i> ¿Listo para transformar su condominio?
+                            </h3>
+                            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6 sm:mb-8">
+                                Deje la administración en manos expertas. Reduzca la morosidad, mantenga sus áreas impecables y reciba asesoría profesional continua.
+                            </p>
+
+                            <div class="space-y-3 bg-bluebrand-900/80 p-5 sm:p-6 rounded-2xl border border-bluebrand-800">
+                                <div class="flex items-center gap-3 text-xs sm:text-sm">
+                                    <i data-lucide="check" class="w-4 h-4 sm:w-5 sm:h-5 text-bluebrand-400 shrink-0"></i>
+                                    <span class="text-slate-200">Evaluación inicial gratuita de su inmueble</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-xs sm:text-sm">
+                                    <i data-lucide="check" class="w-4 h-4 sm:w-5 sm:h-5 text-bluebrand-400 shrink-0"></i>
+                                    <span class="text-slate-200">Propuesta adaptada a su presupuesto</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-xs sm:text-sm">
+                                    <i data-lucide="check" class="w-4 h-4 sm:w-5 sm:h-5 text-bluebrand-400 shrink-0"></i>
+                                    <span class="text-slate-200">Transición rápida y ordenada</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 sm:mt-8">
+                                <a href="#contacto" class="w-full bg-bluebrand-600 hover:bg-bluebrand-500 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg transition duration-200 flex items-center justify-center gap-2 border border-bluebrand-400/30">
+                                    <i data-lucide="mail" class="w-5 h-5"></i> Solicitar Reunión Diagnóstica
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="py-16 sm:py-24 bg-slate-100 border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4 mb-12 sm:mb-16">
+                    <span class="text-bluebrand-600 font-semibold text-xs sm:text-sm uppercase tracking-widest bg-bluebrand-50 px-3 py-1 rounded-full border border-bluebrand-200">Contáctenos</span>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold text-bluebrand-950">Estamos para atenderle</h2>
+                    <p class="text-slate-600 text-base sm:text-lg">
+                        ¿Tiene dudas o desea cotizar la administración de su condominio? Escríbanos y un asesor le responderá a la brevedad.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12">
+                    <!-- Contact Information Card -->
+                    <div class="lg:col-span-5 space-y-8">
+                        <div class="bg-bluebrand-950 text-white p-6 sm:p-8 rounded-3xl shadow-xl space-y-6">
+                            <h3 class="text-xl sm:text-2xl font-bold">Información de Contacto</h3>
+                            <p class="text-slate-300 text-xs sm:text-sm">
+                                Comuníquese con nuestras oficinas en horario hábil o a través de nuestros canales digitales.
+                            </p>
+
+                            <div class="space-y-4 pt-2">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-xl bg-bluebrand-800 text-bluebrand-300 flex items-center justify-center shrink-0">
+                                        <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-white text-sm sm:text-base">Dirección</h4>
+                                        <p class="text-slate-300 text-xs sm:text-sm mt-0.5">Torre Empresarial, Piso 4, Oficina 42, Caracas, Venezuela.</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-xl bg-bluebrand-800 text-bluebrand-300 flex items-center justify-center shrink-0">
+                                        <i data-lucide="phone" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-white text-sm sm:text-base">Teléfonos</h4>
+                                        <p class="text-slate-300 text-xs sm:text-sm mt-0.5">+58 (212) 555-1234 / +58 (412) 555-5678</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-xl bg-bluebrand-800 text-bluebrand-300 flex items-center justify-center shrink-0">
+                                        <i data-lucide="mail" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-white text-sm sm:text-base">Correo Electrónico</h4>
+                                        <p class="text-slate-300 text-xs sm:text-sm mt-0.5 break-all">contacto@serviduroc.com</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-xl bg-bluebrand-800 text-bluebrand-300 flex items-center justify-center shrink-0">
+                                        <i data-lucide="clock" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-white text-sm sm:text-base">Horario de Atención</h4>
+                                        <p class="text-slate-300 text-xs sm:text-sm mt-0.5">Lunes a Viernes: 8:00 AM - 4:00 PM</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pt-6 border-t border-bluebrand-800">
+                                <a href="https://wa.me/584125555678" target="_blank" rel="noopener noreferrer" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-3 px-4 rounded-xl shadow-lg transition duration-200 flex items-center justify-center gap-2 text-sm sm:text-base">
+                                    <i data-lucide="message-circle" class="w-5 h-5"></i> Chatear por WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hardened Contact Form -->
+                    <div class="lg:col-span-7">
+                        <div class="bg-white p-6 sm:p-10 rounded-3xl shadow-xl border border-slate-200">
+                            <h3 class="text-xl sm:text-2xl font-bold text-bluebrand-950 mb-2">Solicite una Cotización o Consulta</h3>
+                            <p class="text-slate-600 text-xs sm:text-sm mb-6">Complete el siguiente formulario y nos pondremos en contacto con su Junta de Condominio de inmediato.</p>
+
+                            <form id="contact-form" onsubmit="handleSecureContactSubmit(event)" class="space-y-4 sm:space-y-6" novalidate>
+                                <!-- Honeypot Anti-Bot Field -->
+                                <div style="display:none;" aria-hidden="true">
+                                    <label for="website_hp">Website</label>
+                                    <input type="text" id="website_hp" name="website_hp" tabindex="-1" autocomplete="off">
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                                    <div>
+                                        <label for="form-nombre" class="block text-xs sm:text-sm font-medium text-slate-700 mb-1.5 sm:mb-2">Nombre y Apellido</label>
+                                        <input type="text" id="form-nombre" name="nombre" required maxlength="100" autocomplete="name" placeholder="Ej. Carlos Mendoza" class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-bluebrand-500 focus:bg-white transition">
+                                    </div>
+                                    <div>
+                                        <label for="form-telefono" class="block text-xs sm:text-sm font-medium text-slate-700 mb-1.5 sm:mb-2">Teléfono de Contacto</label>
+                                        <input type="tel" id="form-telefono" name="telefono" required maxlength="25" autocomplete="tel" placeholder="Ej. 0412-1234567" class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-bluebrand-500 focus:bg-white transition">
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                                    <div>
+                                        <label for="form-email" class="block text-xs sm:text-sm font-medium text-slate-700 mb-1.5 sm:mb-2">Correo Electrónico</label>
+                                        <input type="email" id="form-email" name="email" required maxlength="150" autocomplete="email" placeholder="correo@ejemplo.com" class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-bluebrand-500 focus:bg-white transition">
+                                    </div>
+                                    <div>
+                                        <label for="form-condominio" class="block text-xs sm:text-sm font-medium text-slate-700 mb-1.5 sm:mb-2">Nombre del Condominio / Inmueble</label>
+                                        <input type="text" id="form-condominio" name="condominio" required maxlength="120" autocomplete="organization" placeholder="Ej. Res. Las Mercedes" class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-bluebrand-500 focus:bg-white transition">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="flex justify-between items-center mb-1.5 sm:mb-2">
+                                        <label for="message-input" class="block text-xs sm:text-sm font-medium text-slate-700">Mensaje o Detalle de su Solicitud</label>
+                                        <span id="char-counter" class="text-[11px] sm:text-xs text-slate-500 font-medium">0 / 500 caracteres</span>
+                                    </div>
+                                    <textarea id="message-input" name="mensaje" rows="4" maxlength="500" required placeholder="Indique número de apartamentos, tipo de servicio requerido..." class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-bluebrand-500 focus:bg-white transition resize-none" oninput="updateCharCount(this)"></textarea>
+                                </div>
+
+                                <button id="submit-btn" type="submit" class="w-full bg-bluebrand-600 hover:bg-bluebrand-700 text-white font-bold py-3.5 sm:py-4 px-6 rounded-xl shadow-lg transition duration-200 flex items-center justify-center gap-2 text-sm sm:text-base">
+                                    <i data-lucide="send" class="w-5 h-5"></i> Enviar Mensaje
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-bluebrand-950 text-white border-t border-bluebrand-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10">
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-bluebrand-600 to-bluebrand-400 flex items-center justify-center font-extrabold text-white text-lg">
+                            SC
+                        </div>
+                        <span class="text-xl font-bold tracking-wide">Serviduroc <span class="text-bluebrand-400">C.A.</span></span>
+                    </div>
+                    <p class="text-slate-300 text-xs sm:text-sm max-w-sm leading-relaxed">
+                        Empresa líder en administración de condominios en Venezuela, brindando transparencia, eficiencia financiera y tranquilidad a las familias y comunidades.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-3 sm:mb-4 text-xs sm:text-sm uppercase tracking-wider">Enlaces Rápidos</h4>
+                    <ul class="space-y-2.5 text-xs sm:text-sm text-slate-300">
+                        <li><a href="#inicio" class="hover:text-bluebrand-400 transition">Inicio</a></li>
+                        <li><a href="#servicios" class="hover:text-bluebrand-400 transition">Servicios</a></li>
+                        <li><a href="#nosotros" class="hover:text-bluebrand-400 transition">Nosotros</a></li>
+                        <li><a href="#contacto" class="hover:text-bluebrand-400 transition">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-3 sm:mb-4 text-xs sm:text-sm uppercase tracking-wider">Servicios</h4>
+                    <ul class="space-y-2.5 text-xs sm:text-sm text-slate-300">
+                        <li><a href="#servicios" class="hover:text-bluebrand-400 transition">Administración Financiera</a></li>
+                        <li><a href="#servicios" class="hover:text-bluebrand-400 transition">Cobranza Efectiva</a></li>
+                        <li><a href="#servicios" class="hover:text-bluebrand-400 transition">Mantenimiento y Proveedores</a></li>
+                        <li><a href="#servicios" class="hover:text-bluebrand-400 transition">Gestión de Asambleas</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-3 sm:mb-4 text-xs sm:text-sm uppercase tracking-wider">Legal</h4>
+                    <ul class="space-y-2.5 text-xs sm:text-sm text-slate-300">
+                        <li><a href="#" class="hover:text-bluebrand-400 transition">Términos de Servicio</a></li>
+                        <li><a href="#" class="hover:text-bluebrand-400 transition">Política de Privacidad</a></li>
+                        <li><a href="#" class="hover:text-bluebrand-400 transition">Ley de Propiedad Horizontal</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 sm:mt-16 pt-8 border-t border-bluebrand-900 flex flex-col sm:flex-row items-center justify-between text-center sm:text-left text-xs text-slate-400 gap-4">
+                <p>&copy; 2026 Serviduroc C.A. Todos los derechos reservados.</p>
+                <p>Diseñado con excelencia para la gestión inmobiliaria en Venezuela.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Dialog -->
+    <div id="custom-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden p-4">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full mx-4 shadow-2xl border border-slate-200 text-center space-y-4">
+            <div id="modal-icon" class="w-16 h-16 bg-bluebrand-100 text-bluebrand-600 rounded-full flex items-center justify-center mx-auto">
+                <i data-lucide="check-circle" class="w-8 h-8"></i>
+            </div>
+            <h3 id="modal-title" class="text-lg sm:text-xl font-bold text-bluebrand-950">¡Éxito!</h3>
+            <p id="modal-text" class="text-slate-600 text-xs sm:text-sm">Mensaje de notificación.</p>
+            <button onclick="closeModal()" class="w-full bg-bluebrand-900 hover:bg-bluebrand-800 text-white font-bold py-3 rounded-xl transition text-sm">
+                Aceptar
+            </button>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/584125555678" target="_blank" rel="noopener noreferrer" class="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-30 bg-emerald-500 hover:bg-emerald-600 text-white w-12 h-12 sm:w-14 sm:h-14 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 transform hover:scale-110" aria-label="WhatsApp">
+        <i data-lucide="message-circle" class="w-6 h-6 sm:w-7 sm:h-7"></i>
+    </a>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
