@@ -1,4 +1,4 @@
-//Config Tailwind 
+// Tailwind Extended Color Configuration
 tailwind.config = {
     theme: {
         extend: {
@@ -26,13 +26,12 @@ tailwind.config = {
             }
         }
     }
-}
+};
 
-
-// Initialize Lucide icons
+// Initialize Lucide Icons
 lucide.createIcons();
 
-// Mobile Menu Toggle
+// Mobile Navigation Toggle
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');
 
@@ -42,17 +41,13 @@ if (mobileMenuBtn) {
     });
 }
 
-// Close mobile menu when clicking a link
 document.querySelectorAll('#mobile-menu a').forEach(link => {
     link.addEventListener('click', () => {
         mobileMenu.classList.add('hidden');
     });
 });
 
-// Track last submission timestamp for Client-side Rate-limiting (Cooldown: 30s)
-let lastSubmissionTime = 0;
-
-// Update character counter for textarea with strict length validation
+// Textarea Character Counter
 function updateCharCount(textarea) {
     const maxLength = parseInt(textarea.getAttribute('maxlength')) || 500;
     if (textarea.value.length > maxLength) {
@@ -72,7 +67,7 @@ function updateCharCount(textarea) {
     }
 }
 
-// HTML Entity Encoding to prevent DOM-based XSS when processing input
+// Input Sanitization for XSS Prevention
 function sanitizeInput(str) {
     if (typeof str !== 'string') return '';
     return str
@@ -84,41 +79,44 @@ function sanitizeInput(str) {
         .replace(/\//g, '&#x2F;');
 }
 
-// Hardened contact & quote submission handler with rate-limiting, honeypot, and strict validations
-function handleSecureContactSubmit(event) {
+// Global variable for rate limiting
+let lastSubmissionTime = 0;
+
+// Web3Forms Asynchronous Submission Handler
+async function handleSecureContactSubmit(event) {
     event.preventDefault();
 
-    // 1. Rate Limiting Check (Prevent spam submissions)
+    // 1. Rate Limiting Check (30s Cooldown)
     const now = Date.now();
-    const cooldownMs = 30000; // 30 seconds
+    const cooldownMs = 30000;
     if (now - lastSubmissionTime < cooldownMs) {
         const remainingSecs = Math.ceil((cooldownMs - (now - lastSubmissionTime)) / 1000);
         showModal("Límite de Envíos", `Por razones de seguridad, espere ${remainingSecs} segundos antes de enviar otra solicitud.`, "error");
         return;
     }
 
-    // 2. Check Honeypot Anti-Bot Field
+    // 2. Honeypot Check
     const honeypot = document.getElementById('website_hp');
     if (honeypot && honeypot.value.trim() !== "") {
-        console.warn("Acceso no autorizado detectado (Bot anti-spam).");
+        console.warn("Bot anti-spam detectado.");
         document.getElementById('contact-form').reset();
         return;
     }
 
-    // 3. Retrieve raw input values
+    // 3. Extract Raw Field Values
     const rawNombre = document.getElementById('form-nombre').value.trim();
     const rawTelefono = document.getElementById('form-telefono').value.trim();
     const rawEmail = document.getElementById('form-email').value.trim();
     const rawCondominio = document.getElementById('form-condominio').value.trim();
     const rawMensaje = document.getElementById('message-input').value.trim();
 
-    // 4. Check Required Fields
+    // 4. Required Field Checks
     if (!rawNombre || !rawTelefono || !rawEmail || !rawCondominio || !rawMensaje) {
         showModal("Campos Incompletos", "Por favor complete todos los campos obligatorios del formulario.", "error");
         return;
     }
 
-    // 5. Strict Validations
+    // 5. Regex Validation
     const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s'.-]{2,100}$/;
     if (!nameRegex.test(rawNombre)) {
         showModal("Error en Nombre", "Por favor ingrese un nombre válido (sin caracteres especiales).", "error");
@@ -140,37 +138,49 @@ function handleSecureContactSubmit(event) {
         return;
     }
 
-    // 6. Length Constraints Check
-    if (rawNombre.length > 100 || rawCondominio.length > 120 || rawMensaje.length > 500) {
-        showModal("Exceso de Caracteres", "Uno de los campos supera la longitud máxima permitida.", "error");
-        return;
-    }
+    // UI Loading State
+    const submitBtn = document.getElementById('submit-btn');
+    const originalBtnHtml = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = `<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> Enviando...`;
+    lucide.createIcons();
 
-    // 7. Secure Sanitized Payload
-    const safeData = {
-        nombre: sanitizeInput(rawNombre),
-        telefono: sanitizeInput(rawTelefono),
-        email: sanitizeInput(rawEmail),
-        condominio: sanitizeInput(rawCondominio),
-        mensaje: sanitizeInput(rawMensaje),
-        submittedAt: new Date().toISOString()
-    };
+    try {
+        const form = document.getElementById('contact-form');
+        const formData = new FormData(form);
 
-    lastSubmissionTime = Date.now();
-    console.log("Payload sanitizado e inspeccionado correctamente:", safeData);
+        const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+        });
 
-    showModal("¡Solicitud Enviada!", "Gracias por contactar a Serviduroc C.A. Su mensaje ha sido validado correctamente. Nos pondremos en contacto con su Junta de Condominio a la brevedad.", "success");
-    
-    document.getElementById('contact-form').reset();
-    const counter = document.getElementById('char-counter');
-    if (counter) {
-        counter.textContent = "0 / 500 caracteres";
-        counter.classList.remove('text-red-500', 'font-bold');
-        counter.classList.add('text-slate-500');
+        const result = await response.json();
+
+        if (result.success) {
+            lastSubmissionTime = Date.now();
+            showModal("¡Solicitud Enviada!", "Gracias por contactar a Serviduroc C.A. Su mensaje ha sido enviado exitosamente. Nos pondremos en contacto a la brevedad.", "success");
+            
+            form.reset();
+            const counter = document.getElementById('char-counter');
+            if (counter) {
+                counter.textContent = "0 / 500 caracteres";
+                counter.classList.remove('text-red-500', 'font-bold');
+                counter.classList.add('text-slate-500');
+            }
+        } else {
+            showModal("Error al Enviar", result.message || "Ocurrió un error al procesar el envío. Por favor intente nuevamente.", "error");
+        }
+    } catch (error) {
+        console.error("Error Web3Forms:", error);
+        showModal("Error de Conexión", "No se pudo conectar con el servidor. Verifique su conexión a internet e intente más tarde.", "error");
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHtml;
+        lucide.createIcons();
     }
 }
 
-// Modal functions using secure textContent
+// Custom Modal Handler
 function showModal(title, text, type) {
     const modalTitle = document.getElementById('modal-title');
     const modalText = document.getElementById('modal-text');
