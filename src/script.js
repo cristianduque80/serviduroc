@@ -109,17 +109,18 @@ async function handleSecureContactSubmit(event) {
     const rawEmail = document.getElementById('form-email').value.trim();
     const rawCondominio = document.getElementById('form-condominio').value.trim();
     const rawMensaje = document.getElementById('message-input').value.trim();
+    const rawNumber = document.getElementById('form-numero').value.trim();
 
     // 4. Required Field Checks
-    if (!rawNombre || !rawTelefono || !rawEmail || !rawCondominio || !rawMensaje) {
-        showModal("Campos Incompletos", "Por favor complete todos los campos obligatorios del formulario.", "error");
+    if (!rawNombre || !rawTelefono || !rawEmail || !rawCondominio || !rawMensaje || !rawNumber) {
+        showModal("Campos Incompletos", "Por favor, complete todos los campos obligatorios del formulario.", "error");
         return;
     }
 
     // 5. Regex Validation
     const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s'.-]{2,100}$/;
     if (!nameRegex.test(rawNombre)) {
-        showModal("Error en Nombre", "Por favor ingrese un nombre válido (sin caracteres especiales).", "error");
+        showModal("Error en Nombre", "Por favor ingrese un nombre válido.", "error");
         document.getElementById('form-nombre').focus();
         return;
     }
@@ -138,6 +139,13 @@ async function handleSecureContactSubmit(event) {
         return;
     }
 
+    const numberRegex = /^[0-9]{1,120}$/;
+    if (!numberRegex.test(rawNumber)) {
+        showModal("Número Inválido", "Por favor, ingrese un número de unidades válido.", "error");
+        document.getElementById('form-numero').focus();
+        return;
+    }
+
     // UI Loading State
     const submitBtn = document.getElementById('submit-btn');
     const originalBtnHtml = submitBtn.innerHTML;
@@ -149,7 +157,7 @@ async function handleSecureContactSubmit(event) {
         const form = document.getElementById('contact-form');
         const formData = new FormData(form);
 
-        const response = await fetch('https://api.web3forms.com/submit', {
+        const response = await fetch('https://api .web3forms.com/submit', {
             method: 'POST',
             body: formData
         });
@@ -191,7 +199,7 @@ function showModal(title, text, type) {
     
     if (modalIcon) {
         if (type === 'error') {
-            modalIcon.className = "w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto";
+            modalIcon.className = "w-16 h-16   text-red-600 rounded-full flex items-center justify-center mx-auto";
             modalIcon.innerHTML = `<i data-lucide="alert-circle" class="w-8 h-8"></i>`;
         } else {
             modalIcon.className = "w-16 h-16 bg-bluebrand-100 text-bluebrand-600 rounded-full flex items-center justify-center mx-auto";
